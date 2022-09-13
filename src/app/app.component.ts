@@ -35,15 +35,25 @@ formSecondPlayer = this.fb.group({
     let y = this.formFirstPlayer.value.y;
     let p = this.formFirstPlayer.value.p;
     console.log(x,y,p);
-    const classStyle = "rond"+p;
-    const idPion = "#p"+p+"j1";
-    $(idPion).removeClass(classStyle);
-    const idCell = "#cell-"+x+y;
-    $(idCell).addClass("rond");
-    this.formFirstPlayer.reset();
+    if(this.isAllEntryValid(<number><unknown>x, <number><unknown>y, <number><unknown>p)){
+      const classStyle = "rond"+p;
+      const idPion = "#p"+p+"j1";
+      $(idPion).removeClass(classStyle);
+      const idCell = "#cell-"+x+y;
+      $(idCell).addClass("rond");
+      this.formFirstPlayer.reset();
+    }
   }
 
-  isAllEntryValid():boolean{
+  isAllEntryValid(x:number, y:number, p:number):boolean{
+    return (x<3 &&  x>=0) && (y<3 && y>=0) && (p>0 && p<4);
+  }
+
+  isMovePion():boolean{
+    return false;
+  }
+
+  isWinner(): boolean{
     return false;
   }
 
