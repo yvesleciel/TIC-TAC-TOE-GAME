@@ -1,0 +1,137 @@
+.playspace{
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-auto-rows: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+
+.plateau{
+  background-color: white;
+  border: solid 1px black;
+  width: 100%;
+  height: 100%;
+}
+
+.joueur{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.joueur2{
+background-color: brown;
+}
+
+.joueur1{
+  background-color: blue;
+}
+
+.container-fluid{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.formulaire{
+  margin-top: 50%;
+  background-color: beige;
+  border: 1px solid black;
+  margin-right: 1px;
+  padding-bottom: 4px;
+}
+
+.form-control {
+  width: 80%;
+}
+
+.pions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.pions-joueur1, .pions-joueur2{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 5px;
+  text-align: center;
+}
+
+.rond1, .rond2, .rond3{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px black solid;
+  background-color: red;
+  margin-left: 4px;
+  text-align: center;
+
+  cursor: move;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.rond1, .rond2, .rond3:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.rond{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px black solid;
+  background-color: red;
+  text-align: center;
+}
+
+.carre1, .carre2, .carre3{
+  width: 50px;
+  height: 50px;
+  border: 1px black solid;
+  background-color: blue;
+  margin-left: 4px;
+}
+
+.carre{
+  width: 25px;
+  height: 25px;
+  border: 1px black solid;
+  background-color: blue;
+  text-align: center;
+}
+
+table
+{
+  border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+  width: 100%;
+  height: 100%;
+}
+td
+{
+  border: 2px solid black;
+  text-align: center;
+}
+td:hover{
+  border: 4px solid blue;
+}
+
+.tableau{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  margin-left: 10%;
+  height: 50%;
+}

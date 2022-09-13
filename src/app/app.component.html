@@ -1,0 +1,163 @@
+<div class="container-fluid">
+ <div class="playspace">
+   <div class="joueur1">
+     <nav class="joueur">
+       <h2><em>JOUEUR 1</em></h2>
+     </nav>
+     <form class="formulaire" [formGroup]="formFirstPlayer" (ngSubmit)="submitPlayer1()">
+     <div class="row pt-5">
+       <div class="col-auto mt-2">
+         <label for="inputPassword1" >abcisse X:</label>
+       </div>
+       <div class="col-auto">
+         <input type="text" class="form-control" id="inputPassword1" placeholder="Coordonnées de X" formControlName="x">
+       </div>
+     </div>
+       <div class="row pt-5">
+         <div class="col-auto mt-2">
+           <label for="inputPassword2" >abcisse Y:</label>
+         </div>
+         <div class="col-auto">
+           <input type="text" class="form-control" id="inputPassword2" placeholder="Coordonnées de Y" formControlName="y">
+         </div>
+       </div>
+       <div class="row pt-5">
+         <div class="col-auto mt-2 mx-3">
+           <label for="inputPassword3" >Pion:</label>
+         </div>
+         <div class="col-auto">
+           <input type="text" class="form-control" id="inputPassword3" placeholder="Numéro du Pion" formControlName="p">
+         </div>
+       </div>
+       <div class="row pt-5 mx-4">
+         <div class="col-12" style="width: 100%">
+           <button class="btn btn-primary" type="submit"> Jouer/Play</button>
+         </div>
+       </div>
+     </form>
+   </div>
+   <div class="plateau">
+    <nav class="joueur">
+      <h1 >
+        TIC TAC TOE ONLINE GAME
+      </h1>
+    </nav>
+<!--     PLATEAU DE JEU-->
+     <div class="pions">
+       <div>
+         <div class="pions-joueur1">
+           <div id="p1j1" class="rond1" (cdkDragDropped)="drop($event)" (cdkDragEnded)="drag($event)" (cdkDragEntered)="ented($event)" cdkDrag>
+             rond1
+           </div>
+           <div id="p2j1" class="rond2" cdkDrag>
+             rond2
+           </div>
+           <div id="p3j1" class="rond3" cdkDrag>
+             rond3
+           </div>
+         </div>
+       </div>
+       <div>
+         <div class="pions-joueur2">
+           <div id="p1j2" class="carre1" cdkDrag>
+             carre1
+           </div>
+           <div id="p2j2" class="carre2">
+             carre2
+           </div>
+           <div id="p3j2" class="carre3">
+             carre3
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="tableau">
+       <table>
+          <tr>
+           <td>
+             <div id="cell-00" class="">
+               <p>
+                 0,0
+               </p>
+             </div>
+           </td>
+           <td>
+             <div id="cell-01" class="">
+               <p>
+                 0,1
+               </p>
+             </div>
+           </td>
+           <td>
+             <div id="cell-02" class="" title="pion-rond2">
+               <p>
+                 0,2
+               </p>
+             </div>
+           </td>
+         </tr>
+         <tr>
+           <td>
+             <div class="carre">
+               <p>
+                 1,0
+               </p>
+             </div>
+           </td>
+           <td>
+             <div class="carre">
+               <p>
+                 1,1
+               </p>
+             </div>
+           </td>
+           <td>1,2</td>
+         </tr>
+         <tr>
+           <td>2,0</td>
+           <td>2,1</td>
+           <td>2,2</td>
+         </tr>
+       </table>
+     </div>
+   </div>
+   <div class="joueur2">
+     <nav class="joueur">
+       <h2><em>JOUEUR 2</em></h2>
+     </nav>
+     <form class="formulaire" [formGroup]="formSecondPlayer" (ngSubmit)="submitPlayer2()">
+       <div class="row pt-5">
+         <div class="col-auto mt-2">
+           <label for="inputPassword1" >abcisse X:</label>
+         </div>
+         <div class="col-auto">
+           <input type="text" class="form-control" id="inputPassword1" placeholder="Coordonnées de X" formControlName="x">
+         </div>
+       </div>
+       <div class="row pt-5">
+         <div class="col-auto mt-2">
+           <label for="inputPassword2" >abcisse Y:</label>
+         </div>
+         <div class="col-auto">
+           <input type="text" class="form-control" id="inputPassword2" placeholder="Coordonnées de Y" formControlName="y">
+         </div>
+       </div>
+       <div class="row pt-5">
+         <div class="col-auto mt-2 mx-3">
+           <label for="inputPassword3" >Pion:</label>
+         </div>
+         <div class="col-auto">
+           <input type="text" class="form-control" id="inputPassword3" placeholder="Numéro du Pion" formControlName="p">
+         </div>
+       </div>
+       <div class="row pt-5 mx-4">
+         <div class="col-12" style="width: 100%">
+           <button class="btn btn-primary" type="submit"> Jouer/Play</button>
+         </div>
+       </div>
+     </form>
+   </div>
+ </div>
+</div>
+
+<router-outlet></router-outlet>
