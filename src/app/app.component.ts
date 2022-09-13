@@ -43,6 +43,10 @@ formSecondPlayer = this.fb.group({
     this.formFirstPlayer.reset();
   }
 
+  isAllEntryValid():boolean{
+    return false;
+  }
+
   submitPlayer2(){
 
   }
