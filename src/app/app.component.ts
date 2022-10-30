@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {CdkDragEnd, CdkDragEnter} from "@angular/cdk/drag-drop";
+import {map, Observable} from "rxjs";
 
 declare var $:any;
 @Component({
@@ -27,7 +28,7 @@ formSecondPlayer = this.fb.group({
 
   ngOnInit() {
     console.log($('.rond').find())
-
+    console.log('test jenkins build')
   }
 
   submitPlayer1(){
