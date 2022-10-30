@@ -28,7 +28,7 @@ formSecondPlayer = this.fb.group({
 
   ngOnInit() {
     console.log($('.rond').find())
-    console.log('test jenkins build')
+    console.log('test jenkins build***********')
   }
 
   submitPlayer1(){
