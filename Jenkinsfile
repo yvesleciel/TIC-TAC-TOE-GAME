@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
                 git credentialsId: 'devopsSSHKey', url: 'git@github.com:yvesleciel/TIC-TAC-TOE-GAME.git'
                 echo pwd()
-                sh "ng build"
+                sh "npm install && ng build"
             }
         }
     }
