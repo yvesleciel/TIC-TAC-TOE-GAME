@@ -161,3 +161,16 @@
 </div>
 
 <router-outlet></router-outlet>
+
+<!--règles d'insertion des pions dans les cases:
+
+* si le pion n'est pas encore positionné et que la case est vide retourne true;
+* si le pion est déjà positionné et que tous les pions ne sont pas joué, retourne false;
+* si le pion est déjà positionné et que tous les autres pions le sont également, alors:
+* si pfx = pi +1 et pfy = pi+1 ou pfx = pi +0 et pfy = pi+1 ou pfx = pi +1 et pfy = pi+0 et (pfx, pfy) vide, return true
+
+* autres return false
+
+
+
+pf = position finale et pi = position initiale b-->
