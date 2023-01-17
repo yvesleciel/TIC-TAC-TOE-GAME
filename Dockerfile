@@ -11,7 +11,7 @@ RUN npm install -g @angular/cli
 # Copy all files
 COPY . .
 # Run ng build through npm to create dist folder
-RUN npm run build --prod
+RUN ng build --prod
 # Define nginx for front-end server
 FROM nginx:1.15.8-alpine
 # Copy dist from ng build to nginx html folder
