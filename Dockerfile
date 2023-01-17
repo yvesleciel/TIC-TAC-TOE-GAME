@@ -15,6 +15,6 @@ RUN ng build
 # Define nginx for front-end server
 FROM nginx:1.15.8-alpine
 
-RUN sudo mv index.html index.html.bk
+RUN bash -c 'mv index.html index.html.bk'
 # Copy dist from ng build to nginx html folder
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
