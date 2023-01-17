@@ -49,14 +49,7 @@ export class AppComponent implements OnInit {
       const idPion = "#p" + p + "j1";
       if ($(idPion).length > 0)
         $(idPion).remove();
-      const idCell = "#cell-" + x + y;
-      if ($(idCell + " " + "p").text().includes('pion')) $(idCell + " " + "p").remove();
-      let child = "<p class='rond' title='" + 'pion' + p + "'>" + 'pion' + p + "<br>" + x + ',' + y + "</p>"
-      $(idCell).addClass("rond");
-      $(idCell).append(child);
-      // @ts-ignore
-      this.pionPositionJoueur1["pion" + p] = {x: x, y: y}
-      console.log(this.pionPositionJoueur1);
+
       this.formFirstPlayer.reset();
     }
   }
@@ -65,18 +58,43 @@ export class AppComponent implements OnInit {
     return (x < 3 && x >= 0) && (y < 3 && y >= 0) && (p > 0 && p < 4);
   }
 
-  isMovePion(x: number, y: number, p: number, player: number): boolean {
 
+  isMovePion(x: number, y: number, p: number, player:number): boolean {
+    const idCell = "#cell-" + x + y;
+    // @ts-ignore
+    const pion = player==1?this.pionPositionJoueur1["pion"+p]:this.pionPositionJoueur2["pion"+p];
+      // @ts-ignore
+     if((pion == null || pion == undefined) && $(idCell).length == 0) return true;
+     // @ts-ignore
+    if((pion != null || pion != undefined)
+    && Object.keys(player==1?this.pionPositionJoueur1:this.pionPositionJoueur2).length == 3){
+      if((x == pion.x + 1 && y == pion.y + 1) ||
+        (x == pion.x + 1 && y == pion.y ) ||
+        (x == pion.x  && y == pion.y + 1) && $(idCell).length == 0){
+        return true;
+      }
+    }
     return false;
+  }
+
+  move(x: number, y: number, p: number, player: number): void{
+    const idCell = "#cell-" + x + y;
+    if ($(idCell + " " + "p").text().includes('pion')) $(idCell + " " + "p").remove();
+    let child = "<p class='rond' title='" + 'pion' + p + "'>" + 'pion' + p + "<br>" + x + ',' + y + "</p>"
+    $(idCell).addClass("rond");
+    $(idCell).append(child);
+    // @ts-ignore
+    this.pionPositionJoueur1["pion" + p] = {x: x, y: y}
+    console.log(this.pionPositionJoueur1);
+    // @ts-ignore
+    console.log(this.pionPositionJoueur1["pion1"]);
   }
 
   isWinner(): boolean {
     return false;
   }
 
-  submitPlayer2() {
-
-  }
+  submitPlayer2() {}
 
   drop(data: any) {
     console.log("**************** drop");
