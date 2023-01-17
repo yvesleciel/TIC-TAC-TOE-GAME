@@ -14,7 +14,5 @@ COPY . .
 RUN ng build
 # Define nginx for front-end server
 FROM nginx:1.15.8-alpine
-
-RUN bash -c 'mv index.html index.html.bk'
 # Copy dist from ng build to nginx html folder
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/tic-tac-toe-game/   /usr/share/nginx/html
